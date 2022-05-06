@@ -1,0 +1,80 @@
+@use "./partials/colors" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+
+html {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body { 
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.125rem solid $color-primary;
+    padding: 1rem $padding-sides;
+
+    &__site-name {
+        color: $color-primary;
+        text-decoration: none;
+        
+        @include desktop {
+            font-weight: bold;
+        }
+    }
+
+    &__list {
+        display:none; 
+        
+        @include desktop {
+            display: flex;
+            list-style: none;
+        }
+    }
+
+    &__item {
+        margin: 0 0.75rem;
+    }
+
+    &__link {
+        font-weight: 300;
+        color: $color-primary;
+        text-decoration: none;
+    }
+
+    &__hamburger {
+        height:100%;
+
+        @include desktop {
+            display: none;
+        }
+    }
+}
+
+.hamburger {
+    &__bar {
+        border-bottom: 0.125rem solid $color-primary;
+        margin-bottom: 0.25rem;
+        width: 1rem;
+        
+        &--bottom {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.hero {
+    background-image: url("../img/hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+    padding: $padding-sides;
+
+    &__page-title {
+        margin: 0;
+    }
+}
